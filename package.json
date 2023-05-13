@@ -8,8 +8,15 @@
   },
   "author": "hanetsuki <me@tsuki-lab.net> (https://github.com/tsuki-lab)",
   "license": "MIT",
+  "engines": {
+    "node": ">=18.16.0",
+    "npm": "please-use-yarn"
+  },
+  "resolutions": {
+    "@storybook/react-docgen-typescript-plugin": "1.0.6--canary.9.cd77847.0"
+  },
   "scripts": {
-    "dev": "run-p dev:*",
+    "dev": "'run-p dev:*'",
     "dev:next": "next dev",
     "dev:happy-css-modules": "yarn happy-css-modules -w",
     "build": "next build",
@@ -21,7 +28,9 @@
     "typecheck": "tsc",
     "prettier": "prettier --config .prettierrc.json './**/*.{js,jsx,ts,tsx,json,md}'",
     "format": "yarn prettier --write",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "next": "^13.4.1",
@@ -30,6 +39,13 @@
     "ress": "^5.0.2"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "7.0.11",
+    "@storybook/addon-interactions": "7.0.11",
+    "@storybook/addon-links": "7.0.11",
+    "@storybook/blocks": "7.0.11",
+    "@storybook/nextjs": "7.0.11",
+    "@storybook/react": "7.0.11",
+    "@storybook/testing-library": "0.0.14-next.2",
     "@types/node": "^18.16.4",
     "@types/react": "18.2.5",
     "@types/react-dom": "18.2.3",
@@ -39,6 +55,7 @@
     "eslint-config-google": "^0.14.0",
     "eslint-config-next": "^13.4.1",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-storybook": "^0.6.12",
     "happy-css-modules": "^2.1.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
@@ -46,6 +63,7 @@
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
     "sass": "^1.62.1",
+    "storybook": "7.0.11",
     "stylelint": "^15.6.1",
     "stylelint-config-idiomatic-order": "^9.0.0",
     "stylelint-config-standard-scss": "^9.0.0",
